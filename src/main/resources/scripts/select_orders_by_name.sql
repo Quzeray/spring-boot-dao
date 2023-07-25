@@ -1,0 +1,9 @@
+-- select_orders_by_name.sql
+
+SELECT PRODUCT_NAME
+FROM ORDERS
+WHERE CUSTOMER_ID IN (
+    SELECT ID
+    FROM CUSTOMERS
+    WHERE NAME = :name
+);

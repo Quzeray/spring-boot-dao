@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS CUSTOMERS;
+DROP TABLE IF EXISTS ORDERS;
+
+-- create_customers_table.sql
+CREATE TABLE CUSTOMERS (
+    ID INTEGER PRIMARY KEY,
+    NAME VARCHAR(255),
+    SURNAME VARCHAR(255),
+    AGE INTEGER,
+    PHONE_NUMBER VARCHAR(20)
+);
+INSERT INTO CUSTOMERS (ID, NAME, SURNAME, AGE, PHONE_NUMBER)
+VALUES
+    (1, 'Alexey', 'Ivanov', 30, '+123456789'),
+    (2, 'Elena', 'Petrova', 25, '+987654321'),
+    (3, 'Ivan', 'Sidorov', 35, '+555555555');
+
+
+-- create_orders_table.sql
+CREATE TABLE ORDERS (
+    ID INTEGER PRIMARY KEY,
+    ORDER_DATE DATE,
+    CUSTOMER_ID INTEGER,
+    PRODUCT_NAME VARCHAR(255),
+    AMOUNT INTEGER
+);
+INSERT INTO ORDERS (ID, ORDER_DATE, CUSTOMER_ID, PRODUCT_NAME, AMOUNT)
+VALUES
+    (1, '2023-07-25', 1, 'Product A', 2),
+    (2, '2023-07-24', 1, 'Product B', 1),
+    (3, '2023-07-23', 2, 'Product C', 3),
+    (4, '2023-07-22', 3, 'Product A', 1);
