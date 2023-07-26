@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -32,9 +33,9 @@ public class ProductRepository {
         }
     }
 
-    public String getProductName(String name) {
+    public List<String> getProductName(String name) {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("name", name);
-        return jdbcTemplate.queryForObject(SELECT_ORDERS_BY_NAME, paramMap, String.class);
+        return jdbcTemplate.queryForList(SELECT_ORDERS_BY_NAME, paramMap, String.class);
     }
 }
